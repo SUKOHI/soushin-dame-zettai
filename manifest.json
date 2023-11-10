@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "送信ダメ、ゼッタイ！",
+  "version": "1.0.0",
+  "description": "Enter キーでメッセージ送信しないようにします（対応： Microsoft Teams, Slack, Chatwork）",
+  "icons": {
+    "16": "images/icon_16.png",
+    "48": "images/icon_48.png",
+    "128": "images/icon_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://teams.microsoft.com/*",
+        "https://app.slack.com/*",
+        "https://www.chatwork.com/*"
+      ],
+      "all_frames": true,
+      "js": ["js/content-script.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "author": "九保すこひ"
+}
